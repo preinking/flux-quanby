@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: prometheus-operator
+  namespace: ns-ip-mon
+  annotations:
+    fluxcd.io/automated: "false"
+    fluxcd.io/tag.chart-image: semver:~0.34
+spec:
+  releaseName: prometheus-operator
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: prometheus-operator
+    version: 8.5.14
